@@ -31,16 +31,38 @@ This repository contains the code for a Machine Learning (ML) Serving API. The A
     poetry install
     ```
 
+## Additional Notes  for installing poetry in windows vscode if any issue facing while installing poetry at initial stage
+Run this command in Git Bash to install Poetry:
+```bash
+curl -sSL https://install.python-poetry.org | python -
+poetry install
+```
+Activate poetry virtual env
+```bash 
+source $(poetry env info --path)\\Scripts\\activate
+```
+Verify Poetry is now recognized:
+```bash
+poetry --version
+```
+
+
 ### Usage
 
 1. Start the API server:
     ```bash
-    python app.py
+    python src/main.py
     ```
 2. Send a request to the API:
     ```bash
     curl -X POST -H "Content-Type: application/json" -d '{"data": [your_data_here]}' http://localhost:5000/predict
     ```
+
+3. Open the URL
+```bash
+http://127.0.0.1:8000/docs
+```
+
 
 ## Contributing
 
