@@ -1,11 +1,11 @@
-import pickle
+import cloudpickle as pickle
 from pathlib import Path
 
 
 def _get_file_dump_path(file: str) -> Path:
     return Path(f"model/{file}.pkl")
 
-def dump_data(data: dict, file_name: str):
+def dump_data(data: any, file_name: str):
     with open(_get_file_dump_path(file_name), 'wb') as file:
         pickle.dump(data, file) #type: ignore
 
