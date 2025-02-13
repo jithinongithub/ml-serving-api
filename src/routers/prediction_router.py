@@ -42,7 +42,7 @@ class PredictionRouter:
                 prediction = self.model.predict(request.input_data)
                 return PredictionResponse(
                     model_name=self.model.model_name,
-                    prediction=prediction
+                    prediction=prediction["prediction"]
                 )
             except Exception as e:
                 raise HTTPException(status_code=500, detail=str(e))
