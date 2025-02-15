@@ -6,7 +6,7 @@ import pandas as pd
 from typing import List
 
 class ModelInterface:
-    def __init__(self, api_url: str = "http://localhost:8000"):
+    def __init__(self, api_url: str = "http://api:8000"):
         self.api_url = api_url
         
     def predict(self, input_data: List[int]) -> dict:

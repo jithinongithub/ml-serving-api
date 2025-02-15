@@ -6,12 +6,8 @@ services:
       dockerfile: Dockerfile.api
     ports:
       - "8000:8000"
-    volumes:
-      - ./src:/app/src
-    environment:
-      - PYTHONPATH=/app
-    networks:
-      - app-network
+
+
 
   streamlit:
     build:
@@ -19,15 +15,7 @@ services:
       dockerfile: Dockerfile.streamlit
     ports:
       - "8501:8501"
-    volumes:
-      - ./src:/app/src
-    environment:
-      - PYTHONPATH=/app
-    depends_on:
-      - api
-    networks:
-      - app-network
 
-networks:
-  app-network:
-    driver: bridge
+
+
+
